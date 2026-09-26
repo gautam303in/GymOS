@@ -47,11 +47,11 @@
 :root {
   /* Clean, high-contrast, modern Light theme */
   --bg-canvas: #f8fafc;
-  --bg-surface: #ffffff;
+  --bg-surface: #fffff0;
   --bg-surface-dim: #f1f5f9;
-  --bg-surface-bright: #ffffff;
+  --bg-surface-bright: #fffff0;
   --bg-surface-variant: #e2e8f0;
-  --bg-surface-container-lowest: #ffffff;
+  --bg-surface-container-lowest: #fffff0;
   --bg-surface-container-low: #f8fafc;
   --bg-surface-container: #f1f5f9;
   --bg-surface-container-high: #e2e8f0;
