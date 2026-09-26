@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg-canvas);
+  --color-surface: var(--bg-surface);
+  --color-surface-dim: var(--bg-surface-dim);
+  --color-surface-bright: var(--bg-surface-bright);
+  --color-surface-variant: var(--bg-surface-variant);
+  --color-surface-container-lowest: var(--bg-surface-container-lowest);
+  --color-surface-container-low: var(--bg-surface-container-low);
+  --color-surface-container: var(--bg-surface-container);
+  --color-surface-container-high: var(--bg-surface-container-high);
+  --color-surface-container-highest: var(--bg-surface-container-highest);
+
+  --color-on-background: var(--txt-on-background);
+  --color-on-surface: var(--txt-on-surface);
+  --color-on-surface-variant: var(--txt-on-surface-variant);
+  --color-inverse-surface: var(--txt-inverse-surface);
+  --color-inverse-on-surface: var(--txt-inverse-on-surface);
+
+  --color-primary: var(--c-primary);
+  --color-primary-fixed: var(--c-primary-fixed);
+  --color-primary-fixed-dim: var(--c-primary-fixed-dim);
+  --color-primary-container: var(--c-primary-container);
+  --color-on-primary: var(--c-on-primary);
+  --color-on-primary-container: var(--c-on-primary-container);
+
+  --color-secondary: var(--c-secondary);
+  --color-secondary-container: var(--c-secondary-container);
+  --color-on-secondary: var(--c-on-secondary);
+
+  --color-tertiary: var(--c-tertiary);
+  --color-tertiary-container: var(--c-tertiary-container);
+  --color-on-tertiary: var(--c-on-tertiary);
+
+  --color-error: var(--c-error);
+  --color-error-container: var(--c-error-container);
+  --color-on-error: var(--c-on-error);
+
+  --color-outline: var(--c-outline);
+  --color-outline-variant: var(--c-outline-variant);
+
+  --font-headline: "Lexend", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+:root {
+  /* Clean, high-contrast, modern Light theme */
+  --bg-canvas: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-dim: #f1f5f9;
+  --bg-surface-bright: #ffffff;
+  --bg-surface-variant: #e2e8f0;
+  --bg-surface-container-lowest: #ffffff;
+  --bg-surface-container-low: #f8fafc;
+  --bg-surface-container: #f1f5f9;
+  --bg-surface-container-high: #e2e8f0;
+  --bg-surface-container-highest: #cbd5e1;
+
+  --txt-on-background: #0f172a;
+  --txt-on-surface: #0f172a;
+  --txt-on-surface-variant: #475569;
+  --txt-inverse-surface: #0f172a;
+  --txt-inverse-on-surface: #ffffff;
+
+  --c-primary: #0284c7;
+  --c-primary-fixed: #e0f2fe;
+  --c-primary-fixed-dim: #0284c7;
+  --c-primary-container: #bae6fd;
+  --c-on-primary: #ffffff;
+  --c-on-primary-container: #0369a1;
+
+  --c-secondary: #0d9488;
+  --c-secondary-container: #ccfbf1;
+  --c-on-secondary: #ffffff;
+
+  --c-tertiary: #7c3aed;
+  --c-tertiary-container: #ede9fe;
+  --c-on-tertiary: #ffffff;
+
+  --c-error: #ef4444;
+  --c-error-container: #fee2e2;
+  --c-on-error: #ffffff;
+
+  --c-outline: #94a3b8;
+  --c-outline-variant: #e2e8f0;
+}
+
+html.dark, :root.dark {
+  /* Sleek cyber-fitness Dark theme */
+  --bg-canvas: #0a0e1a;
+  --bg-surface: #0f1524;
+  --bg-surface-dim: #0f1524;
+  --bg-surface-bright: #1a2438;
+  --bg-surface-variant: #1a2438;
+  --bg-surface-container-lowest: #0a0e1a;
+  --bg-surface-container-low: #111828;
+  --bg-surface-container: #141c2e;
+  --bg-surface-container-high: #1a2438;
+  --bg-surface-container-highest: #202c42;
+
+  --txt-on-background: #e0e8f0;
+  --txt-on-surface: #e0e8f0;
+  --txt-on-surface-variant: #a0b4c4;
+  --txt-inverse-surface: #e0e8f0;
+  --txt-inverse-on-surface: #0a0e1a;
+
+  --c-primary: #7dd3fc;
+  --c-primary-fixed: #c8eaff;
+  --c-primary-fixed-dim: #7dd3fc;
+  --c-primary-container: #0e4d6e;
+  --c-on-primary: #001f2e;
+  --c-on-primary-container: #c8eaff;
+
+  --c-secondary: #88b4cc;
+  --c-secondary-container: #1a3a4e;
+  --c-on-secondary: #001f2e;
+
+  --c-tertiary: #c8a0f0;
+  --c-tertiary-container: #3d2060;
+  --c-on-tertiary: #1a002e;
+
+  --c-error: #ff6b6b;
+  --c-error-container: #3d1414;
+  --c-on-error: #1a0000;
+
+  --c-outline: #4a6070;
+  --c-outline-variant: #2a3a48;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+  }
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(20, 28, 46, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(125, 211, 252, 0.12);
+}
+
+.glass-panel-elevated {
+  background: rgba(26, 36, 56, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(125, 211, 252, 0.2);
+}
+
+/* Material symbols utility */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.material-symbols-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-container-highest);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* Cinematic Gym Animations */
+@keyframes cinematicPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gymLaserSweep {
+  0% {
+    transform: translateY(-100%) rotate(25deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(200%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes barbellFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-80px) translateX(25px);
+    opacity: 0;
+  }
+}
+
+@keyframes telemetryGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.animate-cinematic-pulse {
+  animation: cinematicPulse 4s ease-in-out infinite;
+}
+
+.animate-laser-sweep {
+  animation: gymLaserSweep 6s ease-in-out infinite;
+}
+
+.animate-barbell-float {
+  animation: barbellFloat 5s ease-in-out infinite;
+}

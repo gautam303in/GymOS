@@ -1,0 +1,6 @@
+{
+  "name": "GymOS - Next-Gen Gym Operating System",
+  "description": "Enterprise gym management system featuring real-time attendance telemetry, live QR terminal check-in, class & PT scheduling, CRM pipeline, staff HR tracking, and retention intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
