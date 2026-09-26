@@ -76,16 +76,16 @@
 
   --c-tertiary: #7c3aed;
   --c-tertiary-container: #ede9fe;
-  --c-on-tertiary: #ffffff;
+  --c-on-tertiary: #d0d1a7;
 
   --c-error: #ef4444;
   --c-error-container: #fee2e2;
-  --c-on-error: #ffffff;
+  --c-on-error: #d5d7c3;
 
   --c-outline: #94a3b8;
   --c-outline-variant: #e2e8f0;
 
-  --body-bg: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+  --body-bg: linear-gradient(135deg, #e0f2fe 0%, #d3d3c4 100%);
 }
 
 html.dark,
