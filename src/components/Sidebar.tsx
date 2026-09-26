@@ -90,10 +90,9 @@ export const Sidebar: React.FC = () => {
       icon: 'shield_person',
       badge: 'Admin',
       badgeColor: 'tertiary',
-      primaryScreen: 'tenant-rbac',
-      description: 'User RBAC & Facility Config',
+      primaryScreen: 'settings',
+      description: 'Facility Config',
       children: [
-        { id: 'tenant-rbac', label: 'User RBAC Matrix', icon: 'security', badge: 'RBAC' },
         { id: 'settings', label: 'Facility Settings', icon: 'settings' }
       ]
     }
@@ -268,21 +267,23 @@ export const Sidebar: React.FC = () => {
 
       {/* Bottom Section: Tour Showcase & Live Terminal Status */}
       <div className="px-3 pt-3 mt-auto border-t border-outline-variant/30 space-y-2.5">
-        {/* Public Showcase / Tour Link */}
-        <button
-          onClick={() => setActiveScreen('landing')}
-          className={`w-full flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
-            activeScreen === 'landing'
-              ? 'bg-primary/20 text-primary border border-primary/30'
-              : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-          }`}
-        >
-          <span className="material-symbols-outlined text-[16px] text-tertiary">rocket_launch</span>
-          <div className="text-left flex-1 truncate">
-            <div className="font-semibold text-on-surface text-[11px]">Product Showcase</div>
-          </div>
-          <span className="material-symbols-outlined text-[14px]">chevron_right</span>
-        </button>
+        {/* Public Showcase / Tour Link - Hidden for tenant admin/staff */}
+        {(!currentUser || isSuperAdmin) && (
+          <button
+            onClick={() => setActiveScreen('landing')}
+            className={`w-full flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+              activeScreen === 'landing'
+                ? 'bg-primary/20 text-primary border border-primary/30'
+                : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[16px] text-tertiary">rocket_launch</span>
+            <div className="text-left flex-1 truncate">
+              <div className="font-semibold text-on-surface text-[11px]">Product Showcase</div>
+            </div>
+            <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+          </button>
+        )}
 
         {/* Live Terminal Mini Status Card */}
         <div className="bg-surface-container p-2.5 rounded-xl border border-outline-variant/20">

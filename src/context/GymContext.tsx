@@ -181,7 +181,7 @@ export const GymProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
 
-  const [activeScreen, setActiveScreenRaw] = useState<ScreenId>('login');
+  const [activeScreen, setActiveScreenRaw] = useState<ScreenId>('landing');
 
   const setActiveScreen = (screen: ScreenId) => {
     if (screen === 'super-admin' && currentUser?.role !== 'superadmin') {
@@ -230,34 +230,34 @@ export const GymProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       (cleanPass === 'gym123' || cleanPass === 'admin')
     ) {
       const directorUser: User = {
-        id: 'u-director',
+        id: 'usr_rajesh_singhania',
         username: 'admin@gymos.io',
-        name: 'Alex Ross',
+        name: 'Rajesh Singhania',
         role: 'director',
-        email: 'director@gymos.io',
-        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+        email: 'admin@gymos.io',
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'
       };
       setCurrentUser(directorUser);
       setActiveScreen('dashboard');
-      showToast('Welcome Alex Ross', 'Logged in as Gym Operations Director', 'success');
+      showToast('Welcome Rajesh Singhania', 'Logged in as Gym Operations Director', 'success');
       return { success: true, role: 'director' };
     }
 
-    // 3. Front Desk Staff demo account
     if (
-      (cleanUser.toLowerCase() === 'staff@gymos.io' || cleanUser.toLowerCase() === 'staff') &&
+      (cleanUser.toLowerCase() === 'rohan.desk@gymos.io' || cleanUser.toLowerCase() === 'rohan.desk') &&
       (cleanPass === 'staff123' || cleanPass === 'staff')
     ) {
       const staffUser: User = {
-        id: 'u-staff',
-        username: 'staff@gymos.io',
-        name: 'Jessica Davis',
+        id: 'usr_rohan_deshmukh',
+        username: 'rohan.desk@gymos.io',
+        name: 'Rohan Deshmukh',
         role: 'staff',
-        email: 'staff@gymos.io'
+        email: 'rohan.desk@gymos.io',
+        avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80'
       };
       setCurrentUser(staffUser);
       setActiveScreen('attendance');
-      showToast('Terminal Initialized', 'Front Desk staff shift active', 'success');
+      showToast('Welcome Rohan', 'Front Desk staff shift active', 'success');
       return { success: true, role: 'staff' };
     }
 

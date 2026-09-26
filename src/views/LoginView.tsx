@@ -51,7 +51,7 @@ export const LoginView: React.FC = () => {
   };
 
   const handleFillStaff = () => {
-    setUsername('staff@gymos.io');
+    setUsername('rohan.desk@gymos.io');
     setPassword('staff123');
     setErrorMessage(null);
   };
@@ -406,24 +406,11 @@ export const LoginView: React.FC = () => {
                     <span className="text-xs font-bold text-tertiary group-hover:underline">Desk Staff</span>
                     <span className="text-[10px] bg-tertiary/10 text-tertiary px-1.5 py-0.5 rounded font-mono">Counter</span>
                   </div>
-                  <div className="text-[10px] text-on-surface-variant mt-0.5">staff@gymos.io • staff123</div>
+                  <div className="text-[10px] text-on-surface-variant mt-0.5">rohan.desk@gymos.io • staff123</div>
                 </button>
               </div>
 
-              {/* Super Admin credential notice */}
-              <div className="mt-3 p-2 rounded-xl bg-surface-container/60 flex items-center justify-between border border-outline-variant/20 text-xs">
-                <span className="text-[11px] text-on-surface-variant flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[15px] text-primary">shield</span>
-                  <span>Platform Superadmin Demo:</span>
-                </span>
-                <button
-                  type="button"
-                  onClick={handleFillSuperAdmin}
-                  className="text-[11px] font-mono font-bold text-primary hover:underline"
-                >
-                  superadmin / Admin#321
-                </button>
-              </div>
+
             </div>
           </div>
         </div>

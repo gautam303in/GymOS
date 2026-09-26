@@ -27,11 +27,20 @@ import { TenantAdminRBACView } from './views/TenantAdminRBACView';
 const MainContent: React.FC = () => {
   const { activeScreen, currentUser } = useGym();
 
-  // Full screen dedicated login experience
+  // Full screen dedicated experiences
   if (activeScreen === 'login') {
     return (
       <div className="min-h-screen bg-surface text-on-surface">
         <LoginView />
+        <ToastContainer />
+      </div>
+    );
+  }
+
+  if (activeScreen === 'landing') {
+    return (
+      <div className="min-h-screen bg-surface text-on-surface">
+        <LandingTourView />
         <ToastContainer />
       </div>
     );
@@ -53,7 +62,6 @@ const MainContent: React.FC = () => {
           {activeScreen === 'reports' && <ReportsAnalyticsView />}
           {activeScreen === 'settings' && <SettingsView />}
           {activeScreen === 'tenant-rbac' && <TenantAdminRBACView />}
-          {activeScreen === 'landing' && <LandingTourView />}
           {activeScreen === 'super-admin' && (
             currentUser?.role === 'superadmin' ? <SuperAdminView /> : <DashboardOverview />
           )}

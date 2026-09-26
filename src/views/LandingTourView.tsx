@@ -79,13 +79,6 @@ export const LandingTourView: React.FC = () => {
                 <span>Start Free Trial</span>
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </button>
-              <button
-                onClick={() => setActiveScreen('attendance')}
-                className="px-6 py-3 bg-surface-container-high text-on-surface font-semibold text-sm rounded-xl hover:bg-surface-bright transition-all flex items-center gap-2 border border-outline-variant/40"
-              >
-                <span className="material-symbols-outlined text-[18px]">play_circle</span>
-                <span>Launch QR Terminal</span>
-              </button>
             </div>
 
             <div className="flex items-center gap-6 mt-8 pt-6 border-t border-outline-variant/30 w-full">

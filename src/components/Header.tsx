@@ -150,19 +150,6 @@ export const Header: React.FC = () => {
           </span>
         </button>
 
-        {/* Tenant Admin RBAC Quick Switcher */}
-        <button
-          onClick={() => setActiveScreen(activeScreen === 'tenant-rbac' ? 'dashboard' : 'tenant-rbac')}
-          className={`hidden md:flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-xl transition-all border ${
-            activeScreen === 'tenant-rbac'
-              ? 'bg-primary text-on-primary border-primary shadow-md shadow-primary/20'
-              : 'bg-surface-container hover:bg-surface-container-high text-on-surface border-outline-variant/30'
-          }`}
-          title="Tenant Admin User-Wise RBAC & Function Permissions"
-        >
-          <span className="material-symbols-outlined text-[16px] text-tertiary">shield_person</span>
-          <span>Tenant RBAC</span>
-        </button>
 
         {/* Quick Record Payment Action Button */}
         <button
@@ -266,38 +253,7 @@ export const Header: React.FC = () => {
                 </div>
               </div>
 
-              <div className="text-[11px] text-on-surface-variant uppercase px-2 py-1 font-semibold">Switch Role</div>
-              {(isSuperAdmin
-                ? (['superadmin', 'director', 'manager', 'staff'] as const)
-                : (['director', 'manager', 'staff'] as const)
-              ).map((r) => (
-                <button
-                  key={r}
-                  onClick={() => {
-                    switchRole(r);
-                    setShowProfileMenu(false);
-                  }}
-                  className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center justify-between ${
-                    currentUser?.role === r ? 'bg-primary/20 text-primary font-bold' : 'text-on-surface hover:bg-surface-container'
-                  }`}
-                >
-                  <span className="capitalize">{r === 'superadmin' ? 'Super Admin' : r}</span>
-                  {currentUser?.role === r && <span className="material-symbols-outlined text-[16px]">check</span>}
-                </button>
-              ))}
-
               <div className="mt-2 pt-2 border-t border-outline-variant/20 space-y-1">
-                <button
-                  onClick={() => {
-                    setActiveScreen('tenant-rbac');
-                    setShowProfileMenu(false);
-                  }}
-                  className="w-full text-left px-3 py-1.5 rounded-lg text-xs text-tertiary hover:bg-tertiary/10 transition-colors flex items-center gap-2"
-                >
-                  <span className="material-symbols-outlined text-[16px]">shield_person</span>
-                  <span>Tenant Admin RBAC</span>
-                </button>
-
                 <button
                   onClick={() => {
                     toggleTheme();
