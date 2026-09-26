@@ -181,7 +181,7 @@ export const GymProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
 
-  const [activeScreen, setActiveScreenRaw] = useState<ScreenId>('dashboard');
+  const [activeScreen, setActiveScreenRaw] = useState<ScreenId>('login');
 
   const setActiveScreen = (screen: ScreenId) => {
     if (screen === 'super-admin' && currentUser?.role !== 'superadmin') {
@@ -193,14 +193,7 @@ export const GymProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const [currentBranchId, setCurrentBranchId] = useState<BranchId>('downtown');
   const currentBranch = BRANCHES.find(b => b.id === currentBranchId) || BRANCHES[0];
 
-  const [currentUser, setCurrentUser] = useState<User | null>({
-    id: 'u-director',
-    username: 'admin@gymos.io',
-    name: 'Alex Ross',
-    role: 'director',
-    email: 'director@gymos.io',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
-  });
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   const [saasPackages, setSaasPackages] = useState<SaaSPackage[]>(INITIAL_SAAS_PACKAGES);
   const [saasLicenses, setSaasLicenses] = useState<SaaSLicense[]>(INITIAL_SAAS_LICENSES);
@@ -276,7 +269,7 @@ export const GymProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   const logout = () => {
     setCurrentUser(null);
-    setActiveScreen('landing');
+    setActiveScreen('login');
     showToast('Signed Out', 'You have been safely disconnected from GymOS.', 'info');
   };
 

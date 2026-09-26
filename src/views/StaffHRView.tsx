@@ -244,21 +244,21 @@ export const StaffHRView: React.FC = () => {
                       <td className="py-3.5 px-5 text-right">
                         <div className="flex items-center justify-end gap-1">
                           <button
-                            onClick={() => showToast('Staff Profile', `Viewing operational ledger for ${person.name}`, 'info')}
+                            onClick={() => openModal('view-staff-profile', person)}
                             className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
                             title="View Profile"
                           >
                             <span className="material-symbols-outlined text-[16px]">visibility</span>
                           </button>
                           <button
-                            onClick={() => showToast('Shift Schedule', `Loaded bi-weekly schedule for ${person.name}`, 'info')}
+                            onClick={() => openModal('view-staff-schedule', person)}
                             className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
                             title="Schedule"
                           >
                             <span className="material-symbols-outlined text-[16px]">calendar_month</span>
                           </button>
                           <button
-                            onClick={() => showToast('Edit Staff', `Editing permissions for ${person.name}`, 'info')}
+                            onClick={() => openModal('edit-staff', person)}
                             className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
                             title="Edit"
                           >

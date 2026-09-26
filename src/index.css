@@ -46,12 +46,12 @@
 
 :root {
   /* Clean, high-contrast, modern Light theme */
-  --bg-canvas: #f8fafc;
-  --bg-surface: #fffff0;
-  --bg-surface-dim: #f1f5f9;
-  --bg-surface-bright: #fffff0;
-  --bg-surface-variant: #e2e8f0;
-  --bg-surface-container-lowest: #fffff0;
+  --bg-canvas: #bcc9d6ce;
+  --bg-surface: #cfd0c2;
+  --bg-surface-dim: #d2d5c7;
+  --bg-surface-bright: #eeefea;
+  --bg-surface-variant: #e2e8f0c7;
+  --bg-surface-container-lowest: #dadcbcb9;
   --bg-surface-container-low: #f8fafc;
   --bg-surface-container: #f1f5f9;
   --bg-surface-container-high: #e2e8f0;
@@ -84,9 +84,12 @@
 
   --c-outline: #94a3b8;
   --c-outline-variant: #e2e8f0;
+
+  --body-bg: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
 }
 
-html.dark, :root.dark {
+html.dark,
+:root.dark {
   /* Sleek cyber-fitness Dark theme */
   --bg-canvas: #0a0e1a;
   --bg-surface: #0f1524;
@@ -126,17 +129,24 @@ html.dark, :root.dark {
 
   --c-outline: #4a6070;
   --c-outline-variant: #2a3a48;
+
+  --body-bg: var(--color-surface);
 }
 
 @layer base {
   body {
-    background-color: var(--color-surface);
+    background: var(--body-bg);
     color: var(--color-on-surface);
     font-family: var(--font-body);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-headline);
   }
 }
@@ -173,23 +183,29 @@ html.dark, :root.dark {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-background);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-surface-container-highest);
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-outline);
 }
 
 /* Cinematic Gym Animations */
 @keyframes cinematicPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.6;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.95;
     transform: scale(1.05);
@@ -201,12 +217,15 @@ html.dark, :root.dark {
     transform: translateY(-100%) rotate(25deg);
     opacity: 0;
   }
+
   30% {
     opacity: 0.7;
   }
+
   70% {
     opacity: 0.7;
   }
+
   100% {
     transform: translateY(200%) rotate(25deg);
     opacity: 0;
@@ -214,9 +233,12 @@ html.dark, :root.dark {
 }
 
 @keyframes barbellFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-12px) rotate(1.5deg);
   }
@@ -227,9 +249,11 @@ html.dark, :root.dark {
     transform: translateY(0px) translateX(0px);
     opacity: 0.2;
   }
+
   50% {
     opacity: 0.7;
   }
+
   100% {
     transform: translateY(-80px) translateX(25px);
     opacity: 0;
@@ -240,6 +264,7 @@ html.dark, :root.dark {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 40px 40px;
   }

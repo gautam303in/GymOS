@@ -58,9 +58,19 @@ export const LoginView: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col justify-between bg-surface text-on-surface relative overflow-hidden py-6 px-4 sm:px-8">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-luminosity z-0"
+        src="https://assets.mixkit.co/videos/preview/mixkit-man-training-with-battle-ropes-in-a-gym-43026-large.mp4"
+      />
+
       {/* Ambient background glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-tertiary/10 rounded-full blur-3xl pointer-events-none z-0"></div>
 
       {/* Top Header Navigation */}
       <div className="max-w-7xl w-full mx-auto flex items-center justify-between z-20 pb-4">

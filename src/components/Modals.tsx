@@ -725,6 +725,83 @@ export const Modals: React.FC = () => {
           </div>
         )}
 
+        {/* Modal: View Staff Profile */}
+        {activeModal === 'view-staff-profile' && modalPayload && (
+          <div>
+            <h3 className="text-xl font-headline font-bold text-on-surface mb-1">Staff Profile: {modalPayload.name}</h3>
+            <p className="text-xs text-on-surface-variant mb-4">Role: {modalPayload.role} • ID: {modalPayload.staffCode}</p>
+            <div className="bg-surface-container rounded-xl p-4 flex items-center gap-4 mb-4">
+              <img src={modalPayload.photoUrl} alt={modalPayload.name} className="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20" />
+              <div>
+                <p className="text-sm font-semibold text-on-surface">{modalPayload.name}</p>
+                <p className="text-xs text-on-surface-variant">Phone: {modalPayload.phone}</p>
+                <p className="text-xs text-on-surface-variant">Shift: {modalPayload.shiftHours} ({modalPayload.shiftType})</p>
+                <span className={`inline-flex items-center gap-1 mt-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold ${
+                  modalPayload.geofenceStatus === 'Verified Inside' ? 'bg-primary/10 text-primary' : 'bg-error/15 text-error'
+                }`}>
+                  {modalPayload.geofenceStatus}
+                </span>
+              </div>
+            </div>
+            <div className="flex justify-end gap-2 pt-4 border-t border-outline-variant/30">
+              <button type="button" onClick={closeModal} className="px-4 py-2 rounded-xl bg-surface-container text-on-surface font-medium hover:bg-surface-container-high transition-colors text-xs">
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Modal: View Staff Schedule */}
+        {activeModal === 'view-staff-schedule' && modalPayload && (
+          <div>
+            <h3 className="text-xl font-headline font-bold text-on-surface mb-1">Schedule: {modalPayload.name}</h3>
+            <p className="text-xs text-on-surface-variant mb-4">Bi-weekly shift schedule for {modalPayload.role}</p>
+            <div className="bg-surface-container rounded-xl p-4 mb-4">
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between items-center p-2 bg-surface-container-high/50 rounded-lg">
+                  <span className="font-semibold text-on-surface">Monday - Friday</span>
+                  <span className="text-on-surface-variant">{modalPayload.shiftHours}</span>
+                </div>
+                <div className="flex justify-between items-center p-2 bg-surface-container-high/50 rounded-lg">
+                  <span className="font-semibold text-on-surface">Saturday</span>
+                  <span className="text-on-surface-variant">Off</span>
+                </div>
+                <div className="flex justify-between items-center p-2 bg-surface-container-high/50 rounded-lg">
+                  <span className="font-semibold text-on-surface">Sunday</span>
+                  <span className="text-on-surface-variant">Off</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-end gap-2 pt-4 border-t border-outline-variant/30">
+              <button type="button" onClick={closeModal} className="px-4 py-2 rounded-xl bg-surface-container text-on-surface font-medium hover:bg-surface-container-high transition-colors text-xs">
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Modal: Edit Staff */}
+        {activeModal === 'edit-staff' && modalPayload && (
+          <div>
+            <h3 className="text-xl font-headline font-bold text-on-surface mb-1">Edit Staff: {modalPayload.name}</h3>
+            <p className="text-xs text-on-surface-variant mb-4">Update employee profile and settings.</p>
+            <form onSubmit={(e) => { e.preventDefault(); closeModal(); }} className="space-y-4 text-sm">
+              <div>
+                <label className="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-1.5">Phone Number</label>
+                <input type="tel" defaultValue={modalPayload.phone} className="w-full bg-surface-container text-on-surface px-4 py-2.5 rounded-xl border border-outline-variant/40 focus:border-primary outline-none focus:ring-1 focus:ring-primary transition-all" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-1.5">Shift Hours</label>
+                <input type="text" defaultValue={modalPayload.shiftHours} className="w-full bg-surface-container text-on-surface px-4 py-2.5 rounded-xl border border-outline-variant/40 focus:border-primary outline-none focus:ring-1 focus:ring-primary transition-all font-mono" />
+              </div>
+              <div className="pt-4 flex justify-end gap-3 border-t border-outline-variant/30">
+                <button type="button" onClick={closeModal} className="px-4 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container font-medium transition-colors">Cancel</button>
+                <button type="submit" className="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        )}
+
         {/* Modal: Manage Class */}
         {activeModal === 'manage-class' && modalPayload && (
           <div>
