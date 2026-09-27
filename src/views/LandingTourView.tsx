@@ -353,7 +353,7 @@ export const LandingTourView: React.FC = () => {
               <input
                 type="range"
                 min={100}
-                max={10000}
+                max={14000}
                 step={100}
                 value={calcMembers}
                 onChange={(e) => setCalcMembers(parseInt(e.target.value))}

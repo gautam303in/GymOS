@@ -352,11 +352,10 @@ export const SuperAdminView: React.FC = () => {
       <div className="flex items-center gap-2 border-b border-outline-variant/30 pb-3 overflow-x-auto">
         <button
           onClick={() => setActiveTab('packages')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${
-            activeTab === 'packages'
-              ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
-              : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-          }`}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${activeTab === 'packages'
+            ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
+            : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
+            }`}
         >
           <span className="material-symbols-outlined text-[18px]">tune</span>
           <span>1. Package Customisation (SaaS Pricing)</span>
@@ -364,11 +363,10 @@ export const SuperAdminView: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('generator')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${
-            activeTab === 'generator'
-              ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
-              : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-          }`}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${activeTab === 'generator'
+            ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
+            : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
+            }`}
         >
           <span className="material-symbols-outlined text-[18px]">key</span>
           <span>2. License Generation Engine</span>
@@ -376,11 +374,10 @@ export const SuperAdminView: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('tenants')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${
-            activeTab === 'tenants'
-              ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
-              : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-          }`}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${activeTab === 'tenants'
+            ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
+            : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
+            }`}
         >
           <span className="material-symbols-outlined text-[18px]">corporate_fare</span>
           <span>3. Tenant License Registry ({saasLicenses.length})</span>
@@ -388,11 +385,10 @@ export const SuperAdminView: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('telemetry')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${
-            activeTab === 'telemetry'
-              ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
-              : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
-          }`}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 ${activeTab === 'telemetry'
+            ? 'bg-primary text-on-primary shadow-lg shadow-primary/20'
+            : 'bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high'
+            }`}
         >
           <span className="material-symbols-outlined text-[18px]">monitoring</span>
           <span>4. Hardware Hubs &amp; Audit Pings</span>
@@ -439,7 +435,7 @@ export const SuperAdminView: React.FC = () => {
                   <input
                     type="range"
                     min={100}
-                    max={15000}
+                    max={8000}
                     step={100}
                     value={customMembers}
                     onChange={(e) => setCustomMembers(parseInt(e.target.value))}
@@ -447,9 +443,9 @@ export const SuperAdminView: React.FC = () => {
                   />
                   <div className="flex justify-between text-[10px] text-on-surface-variant font-mono">
                     <span>100</span>
-                    <span>1,500 (Pro)</span>
-                    <span>5,000 (Elite)</span>
-                    <span>15,000+ (Franchise)</span>
+                    <span>2000 (Pro)</span>
+                    <span>4,000 (Elite)</span>
+                    <span>7,000+ (Franchise)</span>
                   </div>
                 </div>
 
@@ -463,7 +459,7 @@ export const SuperAdminView: React.FC = () => {
                     <div className="flex items-center gap-1.5">
                       <input
                         type="number"
-                        min={1}
+                        min={3}
                         max={250}
                         value={customStaff}
                         onChange={(e) => setCustomStaff(Math.max(1, parseInt(e.target.value) || 1))}
@@ -482,10 +478,10 @@ export const SuperAdminView: React.FC = () => {
                     className="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary"
                   />
                   <div className="flex justify-between text-[10px] text-on-surface-variant font-mono">
-                    <span>1 seat</span>
-                    <span>12 seats</span>
-                    <span>30 seats</span>
-                    <span>60+ seats</span>
+                    <span>3 seat</span>
+                    <span>10 seats</span>
+                    <span>25 seats</span>
+                    <span>50+ seats</span>
                   </div>
                 </div>
 
@@ -628,17 +624,15 @@ export const SuperAdminView: React.FC = () => {
                   <div className="flex items-center p-0.5 rounded-lg bg-surface border border-outline-variant/40">
                     <button
                       onClick={() => setBillingCycle('monthly')}
-                      className={`px-2.5 py-1 rounded text-[11px] font-semibold transition-all ${
-                        billingCycle === 'monthly' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
-                      }`}
+                      className={`px-2.5 py-1 rounded text-[11px] font-semibold transition-all ${billingCycle === 'monthly' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+                        }`}
                     >
                       Monthly
                     </button>
                     <button
                       onClick={() => setBillingCycle('annual')}
-                      className={`px-2.5 py-1 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
-                        billingCycle === 'annual' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
-                      }`}
+                      className={`px-2.5 py-1 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${billingCycle === 'annual' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+                        }`}
                     >
                       <span>Annual</span>
                       <span className="text-[9px] px-1 py-0.2 rounded bg-tertiary text-on-tertiary font-bold">-20%</span>
@@ -762,11 +756,10 @@ export const SuperAdminView: React.FC = () => {
                 return (
                   <div
                     key={pkg.id}
-                    className={`p-5 rounded-2xl transition-all flex flex-col justify-between ${
-                      isSelected
-                        ? 'bg-surface-container-high border-2 border-primary shadow-xl shadow-primary/10'
-                        : 'bg-surface-container-low border border-outline-variant/30 hover:border-outline-variant/60'
-                    }`}
+                    className={`p-5 rounded-2xl transition-all flex flex-col justify-between ${isSelected
+                      ? 'bg-surface-container-high border-2 border-primary shadow-xl shadow-primary/10'
+                      : 'bg-surface-container-low border border-outline-variant/30 hover:border-outline-variant/60'
+                      }`}
                   >
                     <div>
                       <div className="flex items-center justify-between mb-2">
@@ -1193,11 +1186,10 @@ export const SuperAdminView: React.FC = () => {
                 setOperationStatusFilter('all');
                 setLicenseStatusFilter('all');
               }}
-              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${
-                operationStatusFilter === 'all' && tenantFilter === 'all' && licenseStatusFilter === 'all'
-                  ? 'bg-surface-container-high border-primary/60 shadow-md shadow-primary/10'
-                  : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
-              }`}
+              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${operationStatusFilter === 'all' && tenantFilter === 'all' && licenseStatusFilter === 'all'
+                ? 'bg-surface-container-high border-primary/60 shadow-md shadow-primary/10'
+                : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
+                }`}
             >
               <div className="flex items-center justify-between text-xs text-on-surface-variant mb-1">
                 <span className="text-[11px] font-semibold uppercase">Total Tenants</span>
@@ -1214,11 +1206,10 @@ export const SuperAdminView: React.FC = () => {
               onClick={() => {
                 setOperationStatusFilter('Online & Operational');
               }}
-              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${
-                operationStatusFilter === 'Online & Operational'
-                  ? 'bg-surface-container-high border-primary/60 shadow-md shadow-primary/10'
-                  : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
-              }`}
+              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${operationStatusFilter === 'Online & Operational'
+                ? 'bg-surface-container-high border-primary/60 shadow-md shadow-primary/10'
+                : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
+                }`}
             >
               <div className="flex items-center justify-between text-xs text-on-surface-variant mb-1">
                 <span className="text-[11px] font-semibold uppercase">Operational</span>
@@ -1235,11 +1226,10 @@ export const SuperAdminView: React.FC = () => {
               onClick={() => {
                 setOperationStatusFilter('Degraded Latency');
               }}
-              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${
-                operationStatusFilter === 'Degraded Latency'
-                  ? 'bg-surface-container-high border-amber-500/60 shadow-md shadow-amber-500/10'
-                  : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
-              }`}
+              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${operationStatusFilter === 'Degraded Latency'
+                ? 'bg-surface-container-high border-amber-500/60 shadow-md shadow-amber-500/10'
+                : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
+                }`}
             >
               <div className="flex items-center justify-between text-xs text-on-surface-variant mb-1">
                 <span className="text-[11px] font-semibold uppercase">Degraded Ping</span>
@@ -1256,11 +1246,10 @@ export const SuperAdminView: React.FC = () => {
               onClick={() => {
                 setOperationStatusFilter('Maintenance Mode');
               }}
-              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${
-                operationStatusFilter === 'Maintenance Mode'
-                  ? 'bg-surface-container-high border-orange-500/60 shadow-md shadow-orange-500/10'
-                  : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
-              }`}
+              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${operationStatusFilter === 'Maintenance Mode'
+                ? 'bg-surface-container-high border-orange-500/60 shadow-md shadow-orange-500/10'
+                : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
+                }`}
             >
               <div className="flex items-center justify-between text-xs text-on-surface-variant mb-1">
                 <span className="text-[11px] font-semibold uppercase">Maintenance</span>
@@ -1277,11 +1266,10 @@ export const SuperAdminView: React.FC = () => {
               onClick={() => {
                 setOperationStatusFilter('Hardware Locked');
               }}
-              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${
-                operationStatusFilter === 'Hardware Locked'
-                  ? 'bg-surface-container-high border-error/60 shadow-md shadow-error/10'
-                  : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
-              }`}
+              className={`p-3.5 rounded-2xl border transition-all cursor-pointer ${operationStatusFilter === 'Hardware Locked'
+                ? 'bg-surface-container-high border-error/60 shadow-md shadow-error/10'
+                : 'bg-surface-container-low border-outline-variant/30 hover:bg-surface-container'
+                }`}
             >
               <div className="flex items-center justify-between text-xs text-on-surface-variant mb-1">
                 <span className="text-[11px] font-semibold uppercase">Locked / Suspended</span>
@@ -1514,13 +1502,12 @@ export const SuperAdminView: React.FC = () => {
                                 {lic.tier}
                               </span>
                               <span
-                                className={`text-[9px] px-1.5 py-0.2 rounded font-mono font-bold uppercase ${
-                                  lic.status === 'Active'
-                                    ? 'bg-primary/20 text-primary'
-                                    : lic.status === 'Expiring Soon'
+                                className={`text-[9px] px-1.5 py-0.2 rounded font-mono font-bold uppercase ${lic.status === 'Active'
+                                  ? 'bg-primary/20 text-primary'
+                                  : lic.status === 'Expiring Soon'
                                     ? 'bg-amber-400/20 text-amber-400'
                                     : 'bg-error/20 text-error'
-                                }`}
+                                  }`}
                               >
                                 {lic.status}
                               </span>
@@ -1533,26 +1520,24 @@ export const SuperAdminView: React.FC = () => {
                               {/* Status Badge with LED */}
                               <div className="flex items-center gap-1.5">
                                 <span
-                                  className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${
-                                    lic.operationStatus === 'Online & Operational'
-                                      ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                                      : lic.operationStatus === 'Degraded Latency'
+                                  className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${lic.operationStatus === 'Online & Operational'
+                                    ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                                    : lic.operationStatus === 'Degraded Latency'
                                       ? 'bg-amber-500/15 text-amber-400 border-amber-500/30'
                                       : lic.operationStatus === 'Maintenance Mode'
-                                      ? 'bg-orange-500/15 text-orange-400 border-orange-500/30'
-                                      : 'bg-error/15 text-error border-error/30'
-                                  }`}
+                                        ? 'bg-orange-500/15 text-orange-400 border-orange-500/30'
+                                        : 'bg-error/15 text-error border-error/30'
+                                    }`}
                                 >
                                   <span
-                                    className={`w-2 h-2 rounded-full ${
-                                      lic.operationStatus === 'Online & Operational'
-                                        ? 'bg-emerald-400 animate-pulse'
-                                        : lic.operationStatus === 'Degraded Latency'
+                                    className={`w-2 h-2 rounded-full ${lic.operationStatus === 'Online & Operational'
+                                      ? 'bg-emerald-400 animate-pulse'
+                                      : lic.operationStatus === 'Degraded Latency'
                                         ? 'bg-amber-400'
                                         : lic.operationStatus === 'Maintenance Mode'
-                                        ? 'bg-orange-400'
-                                        : 'bg-error'
-                                    }`}
+                                          ? 'bg-orange-400'
+                                          : 'bg-error'
+                                      }`}
                                   ></span>
                                   <span>{lic.operationStatus || 'Online & Operational'}</span>
                                 </span>
@@ -1591,9 +1576,8 @@ export const SuperAdminView: React.FC = () => {
                             </div>
                             <div className="w-28 bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
                               <div
-                                className={`h-full rounded-full ${
-                                  usagePercent > 90 ? 'bg-error' : usagePercent > 75 ? 'bg-amber-400' : 'bg-primary'
-                                }`}
+                                className={`h-full rounded-full ${usagePercent > 90 ? 'bg-error' : usagePercent > 75 ? 'bg-amber-400' : 'bg-primary'
+                                  }`}
                                 style={{ width: `${usagePercent}%` }}
                               ></div>
                             </div>
@@ -1639,11 +1623,10 @@ export const SuperAdminView: React.FC = () => {
                                   const nextStatus = lic.status === 'Active' ? 'Suspended' : 'Active';
                                   updateLicenseStatus(lic.id, nextStatus as any);
                                 }}
-                                className={`p-1.5 rounded-lg transition-colors ${
-                                  lic.status === 'Active'
-                                    ? 'bg-surface-container hover:bg-error/20 text-on-surface-variant hover:text-error'
-                                    : 'bg-primary/20 text-primary hover:bg-primary/30'
-                                }`}
+                                className={`p-1.5 rounded-lg transition-colors ${lic.status === 'Active'
+                                  ? 'bg-surface-container hover:bg-error/20 text-on-surface-variant hover:text-error'
+                                  : 'bg-primary/20 text-primary hover:bg-primary/30'
+                                  }`}
                                 title={lic.status === 'Active' ? 'Suspend License' : 'Reactivate License'}
                               >
                                 <span className="material-symbols-outlined text-[16px]">
@@ -1699,15 +1682,14 @@ export const SuperAdminView: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold text-on-surface-variant uppercase">Current Status of Operation</span>
                     <span
-                      className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
-                        selectedAuditLicense.operationStatus === 'Online & Operational'
-                          ? 'bg-emerald-500/20 text-emerald-400'
-                          : selectedAuditLicense.operationStatus === 'Degraded Latency'
+                      className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${selectedAuditLicense.operationStatus === 'Online & Operational'
+                        ? 'bg-emerald-500/20 text-emerald-400'
+                        : selectedAuditLicense.operationStatus === 'Degraded Latency'
                           ? 'bg-amber-500/20 text-amber-400'
                           : selectedAuditLicense.operationStatus === 'Maintenance Mode'
-                          ? 'bg-orange-500/20 text-orange-400'
-                          : 'bg-error/20 text-error'
-                      }`}
+                            ? 'bg-orange-500/20 text-orange-400'
+                            : 'bg-error/20 text-error'
+                        }`}
                     >
                       {selectedAuditLicense.operationStatus}
                     </span>
